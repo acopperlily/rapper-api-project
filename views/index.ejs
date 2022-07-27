@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapper Names</title>
+  <script src="https://kit.fontawesome.com/764e3f9541.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="public/css/style.css">
+  <script src="public/js/main.js" defer></script>
+</head>
+<body>
+  <h1>Current Rappers</h1>
+  <ul class="rappers">
+    <% for (let i = 0; i < info.length; i++) {%>
+      <li class="rapper">
+        <span><%= info[i].stageName %></span>
+        <span><%= info[i].birthName %></span>
+        <span><%= info[i].likes %></span>
+        <i class="fas fa-thumbs-up"></i>
+        <i class="fas fa-trash"></i>
+      </li>
+    <% } %>
+  </ul>
+
+  <h2>Add a Rapper:</h2>
+
+  <form action="/addRapper" method="POST">
+    <input type="text" name="stageName" id="" placeholder="Stage Name">
+    <input type="text" name="birthName" id="" placeholder="Birth Name">
+    <input type="submit">
+  </form>
+</body>
+</html>
